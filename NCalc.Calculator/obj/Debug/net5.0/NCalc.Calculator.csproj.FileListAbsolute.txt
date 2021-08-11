@@ -1,5 +1,0 @@
-C:\Users\MusinA\RiderProjects\ExpressionTreeReaderApp\NCalc.Calculator\obj\Debug\net5.0\NCalc.Calculator.csproj.AssemblyReference.cache
-C:\Users\MusinA\RiderProjects\ExpressionTreeReaderApp\NCalc.Calculator\obj\Debug\net5.0\NCalc.Calculator.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\MusinA\RiderProjects\ExpressionTreeReaderApp\NCalc.Calculator\obj\Debug\net5.0\NCalc.Calculator.AssemblyInfoInputs.cache
-C:\Users\MusinA\RiderProjects\ExpressionTreeReaderApp\NCalc.Calculator\obj\Debug\net5.0\NCalc.Calculator.AssemblyInfo.cs
-C:\Users\MusinA\RiderProjects\ExpressionTreeReaderApp\NCalc.Calculator\obj\Debug\net5.0\NCalc.Calculator.csproj.CoreCompileInputs.cache
