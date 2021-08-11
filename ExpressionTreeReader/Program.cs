@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace ExpressionTreeReader
 {
@@ -6,8 +7,16 @@ namespace ExpressionTreeReader
     {
         static void Main(string[] args)
         {
-            var text = "Lookup(xFind('((())))((()))test1'),'test2',\"HELLO\")";
-            var expression = new Expression(text);
+            Console.WriteLine(DateTime.Now);
+            var rows = File.ReadAllLines("input.txt");
+            foreach (var row in rows)
+            {
+                new Expression(row);
+            }
+            Console.WriteLine(DateTime.Now);
+            // var text = "F#18+(2*N)#\n";
+            // // var text = "Lookup(xFind('((())))((()))test1'),Next(',next')+'test2',\"HELLO\")";
+            // var expression = new Expression(text);
         }
     }
 }

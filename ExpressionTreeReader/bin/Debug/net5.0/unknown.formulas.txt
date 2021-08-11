@@ -1,0 +1,680 @@
+concat
+concat
+concat
+concat
+concat
+concat
+left
+concat
+left
+Count
+day
+Dlookup
+Right
+Len
+InStrRev
+myHistory
+myHistory
+F11<>''
+Int
+Sum
+Int
+Sum
+Int
+Sum
+Int
+Sum
+Int
+Sum
+Int
+Sum
+Left
+left
+Left
+left
+DateAdd
+val
+0
+DateSerial
+int
+myYear
+int
+mymonth
+DateSerial(int(myYear(0)),int(mymonth(-1,2)),1) AND DateAdd
+val
+0
+DateSerial
+int
+myYear
+int
+mymonth
+DateAdd
+val
+0
+DateSerial
+int
+myYear
+int
+mymonth
+DateSerial(int(myYear(0)),int(mymonth(-1,2)),1) AND DateAdd
+val
+0
+DateSerial
+int
+myYear
+int
+mymonth
+DateAdd
+DateSerial
+int
+myYear
+int
+mymonth
+DateAdd
+val
+0
+DateAdd
+DateSerial
+int
+myYear
+int
+mymonth
+DateAdd
+val
+0
+F1 LIKE ' '
+F1 LIKE '*Fujitsu*'
+F1 LIKE ' '
+F1 LIKE ' '
+F1 LIKE 'TT*'
+F1 NOT LIKE ' ' AND F1 NOT LIKE '*Fujitsu*' AND mylookup
+F1 NOT LIKE ' ' AND F1 NOT LIKE '*Fujitsu*' AND mylookup
+F1 NOT LIKE ' ' AND mylookup
+F1 NOT LIKE ' ' AND mylookup
+F1 NOT LIKE ' ' AND mylookup
+F1 NOT LIKE ' ' AND mylookup
+myHistory
+concat
+left
+left
+isnull
+Left
+round
+F13<>''
+F12<>''
+F6 LIKE 'LIFEBOOK T93*'
+F2 LIKE 'sabinffs1vp'
+F2 LIKE 'sabinffs1vp'
+F2 LIKE 'sabinffs1vp'
+1 < 5000
+1 > 5000
+1 > 500
+1 > 1000
+1 > 2000
+1<5000
+1>7000
+exact
+exact
+F22 like '*MyITSM is cancelled*'
+exact
+exact
+exact
+exact
+F5 NOT LIKE "MRZ*"
+F6 like 'Uplift*'
+isNumeric
+'MS SQL' AND F4<cdbl
+'MS SQL' AND F4>
+cdbl
+'MY SQL' AND F4<cdbl
+'MY SQL' AND F4>
+cdbl
+'ORACLE' AND F4<cdbl
+F16 LIKE 'LIFEBOOK T93*'
+F80 like '*Kuppel*'
+F80 like '*Kuppel*'
+F80 like '*Kuppel*'
+F80 like '*Kuppel*'
+isNumeric
+isNumeric
+isNumeric
+isNumeric
+InStr
+InStr
+InStr
+left
+InStr
+isNumeric
+isNumeric
+isNumeric
+isnumeric
+isNumeric
+isnumeric
+isNumeric
+isnumeric
+isNumeric
+isNumeric
+isnumeric
+isNumeric
+isNumeric
+isNumeric
+left
+left
+Left
+left
+left
+Left
+Left
+Left
+Left
+left
+left
+left
+left
+concat
+left
+concat
+left
+left
+concat
+left
+concat
+left
+left
+LEFT
+LEFT
+left
+LEFT
+LEFT
+left
+left
+left
+left
+Left
+left
+left
+inStr
+left
+inStr
+len
+cdbl
+cdate(cdbl(F8))>DateSerial
+int
+myYear
+int
+mymonth
+myCount
+1024 < mylookup
+myFind
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+mysearch
+mysearch
+right
+left
+len
+Left
+Left
+left
+left
+InStr
+len
+len
+len
+Month
+month
+month
+now
+myFind
+myfind
+myHistory
+myHistory
+len
+left
+Right
+Len
+InStrRev
+myFind
+myFind
+Left
+Left
+left
+right
+len
+left
+Trim
+Trim
+Left
+Left
+Left
+mysearch
+InStr
+left
+InStr
+InStr
+left
+InStr
+right
+len
+InStr
+len
+len
+len
+len
+len
+len
+len
+len
+len
+mysearch
+Left
+myMin
+mymin
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+n
+a
+n
+a 
+Initial Inventory
+n
+a
+n
+a
+Remote Einsaetze der Projektmitarbeiter
+right
+len
+InStr
+Round
+Round
+Sum
+sum
+Switch
+Val
+year
+myFind
+myFind
+right
+right
+right
+Left
+concat
+concat
+concat
+concat
+concat
+concat
+left
+concat
+left
+Count
+day
+Dlookup
+Right
+Len
+InStrRev
+myHistory
+myHistory
+F11<>''
+Int
+Sum
+Int
+Sum
+Int
+Sum
+Int
+Sum
+Int
+Sum
+Int
+Sum
+Left
+left
+Left
+left
+DateAdd
+val
+0
+DateSerial
+int
+myYear
+int
+mymonth
+DateSerial(int(myYear(0)),int(mymonth(-1,2)),1) AND DateAdd
+val
+0
+DateSerial
+int
+myYear
+int
+mymonth
+DateAdd
+val
+0
+DateSerial
+int
+myYear
+int
+mymonth
+DateSerial(int(myYear(0)),int(mymonth(-1,2)),1) AND DateAdd
+val
+0
+DateSerial
+int
+myYear
+int
+mymonth
+DateAdd
+DateSerial
+int
+myYear
+int
+mymonth
+DateAdd
+val
+0
+DateAdd
+DateSerial
+int
+myYear
+int
+mymonth
+DateAdd
+val
+0
+F1 LIKE ' '
+F1 LIKE '*Fujitsu*'
+F1 LIKE ' '
+F1 LIKE ' '
+F1 LIKE 'TT*'
+F1 NOT LIKE ' ' AND F1 NOT LIKE '*Fujitsu*' AND mylookup
+F1 NOT LIKE ' ' AND F1 NOT LIKE '*Fujitsu*' AND mylookup
+F1 NOT LIKE ' ' AND mylookup
+F1 NOT LIKE ' ' AND mylookup
+F1 NOT LIKE ' ' AND mylookup
+F1 NOT LIKE ' ' AND mylookup
+myHistory
+concat
+left
+left
+isnull
+Left
+round
+F13<>''
+F12<>''
+F6 LIKE 'LIFEBOOK T93*'
+F2 LIKE 'sabinffs1vp'
+F2 LIKE 'sabinffs1vp'
+F2 LIKE 'sabinffs1vp'
+1 < 5000
+1 > 5000
+1 > 500
+1 > 1000
+1 > 2000
+1<5000
+1>7000
+exact
+exact
+F22 like '*MyITSM is cancelled*'
+exact
+exact
+exact
+exact
+F5 NOT LIKE "MRZ*"
+F6 like 'Uplift*'
+isNumeric
+'MS SQL' AND F4<cdbl
+'MS SQL' AND F4>
+cdbl
+'MY SQL' AND F4<cdbl
+'MY SQL' AND F4>
+cdbl
+'ORACLE' AND F4<cdbl
+F16 LIKE 'LIFEBOOK T93*'
+F80 like '*Kuppel*'
+F80 like '*Kuppel*'
+F80 like '*Kuppel*'
+F80 like '*Kuppel*'
+isNumeric
+isNumeric
+isNumeric
+isNumeric
+InStr
+InStr
+InStr
+left
+InStr
+isNumeric
+isNumeric
+isNumeric
+isnumeric
+isNumeric
+isnumeric
+isNumeric
+isnumeric
+isNumeric
+isNumeric
+isnumeric
+isNumeric
+isNumeric
+isNumeric
+left
+left
+Left
+left
+left
+Left
+Left
+Left
+Left
+left
+left
+left
+left
+concat
+left
+concat
+left
+left
+concat
+left
+concat
+left
+left
+LEFT
+LEFT
+left
+LEFT
+LEFT
+left
+left
+left
+left
+Left
+left
+left
+inStr
+left
+inStr
+len
+cdbl
+cdate(cdbl(F8))>DateSerial
+int
+myYear
+int
+mymonth
+myCount
+1024 < mylookup
+myFind
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+Left
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+myParent
+mysearch
+mysearch
+right
+left
+len
+Left
+Left
+left
+left
+InStr
+len
+len
+len
+Month
+month
+month
+now
+myFind
+myfind
+myHistory
+myHistory
+len
+left
+Right
+Len
+InStrRev
+myFind
+myFind
+Left
+Left
+left
+right
+len
+left
+Trim
+Trim
+Left
+Left
+Left
+mysearch
+InStr
+left
+InStr
+InStr
+left
+InStr
+right
+len
+InStr
+len
+len
+len
+len
+len
+len
+len
+len
+len
+mysearch
+Left
+myMin
+mymin
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+mysearch
+n
+a
+n
+a 
+Initial Inventory
+n
+a
+n
+a
+Remote Einsaetze der Projektmitarbeiter
+right
+len
+InStr
+Round
+Round
+Sum
+sum
+Switch
+Val
+year
+myFind
+myFind
+right
+right
+right
+Left
