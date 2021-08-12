@@ -47,6 +47,7 @@
         Now,
         Trim,
         myMin,
+        myMax,
         Year
     }
 

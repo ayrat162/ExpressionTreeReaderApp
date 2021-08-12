@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using NCalc.Domain;
 using static System.Double;
 
 namespace ExpressionTreeReader
@@ -15,6 +16,7 @@ namespace ExpressionTreeReader
 
         private Operator Operator { get; set; } = Operator.Default;
         private string TextValue { get; set; }
+
 
         public Expression(string text)
         {
@@ -81,6 +83,7 @@ namespace ExpressionTreeReader
             }
 
             if (Operator != Operator.Default) return;
+
 
             level = 0;
             start = 0;
@@ -268,11 +271,11 @@ namespace ExpressionTreeReader
             if (TextValue.Count(c => c == '#') == 2)
             {
                 start = TextValue.IndexOf('#');
-                var oldFormula = TextValue.Substring(start + 1);
+                var oldFormula = TextValue[(start + 1)..];
                 end = oldFormula.IndexOf('#');
                 oldFormula = oldFormula.Substring(0, end);
 
-                var newFormula = oldFormula
+                var newFormula = oldFormula //TODO: Replace with right ones 
                     .Replace("d", DateTime.Now.Day.ToString()) //DAY(@ImportDate))
                     .Replace("m", DateTime.Now.Month.ToString()) //MONTH(@DeliveryDate))
                     .Replace("n", DateTime.Now.Month.ToString()) //MONTH(@ImportDate))
@@ -280,14 +283,14 @@ namespace ExpressionTreeReader
                     .Replace("d", DateTime.Now.Day.ToString()) //DAY(@ImportDate))
                     .Replace("M", DateTime.Now.Month.ToString()) //MONTH(@FiscalDeliveryDate)
                     .Replace("N", DateTime.Now.Month.ToString()) //MONTH(@FiscalDate))
-                    .Replace("Y", DateTime.Now.Month.ToString()); //YEAR(@FiscalDeliveryDate))
+                    .Replace("Y", DateTime.Now.Year.ToString()); //YEAR(@FiscalDeliveryDate))
 
                 TryParse(new NCalc.Expression(newFormula).Evaluate().ToString(), out var d);
                 var num = Convert.ToInt32(d);
                 TextValue = TextValue.Replace("#" + oldFormula + "#", num.ToString());
             } //TODO: Add evaluation of DateTime in Access SQL Format
 
-            
+
             if (Regex.IsMatch(TextValue, @"^[Ff](\d{1,})$"))
             {
                 Operator = Operator.Fxxx;
@@ -301,7 +304,100 @@ namespace ExpressionTreeReader
 
         public string GetValue()
         {
-            throw new System.NotImplementedException();
+            var functions = new Functions();
+            switch (Operator)
+            {
+                case Operator.Concat:
+                    return functions.Concat(Children.Select(e => e.GetValue()));
+                case Operator.Count:
+                    return functions.Count(Children.Select(e => e.GetValue()));
+                case Operator.Day:
+                    return functions.Day(Children.FirstOrDefault().GetValue());
+                case Operator.Empty:
+                    return "";
+                case Operator.Exact:
+                    return functions.Exact(Children.Select(e => e.GetValue()));
+                case Operator.Fxxx:
+                    return functions.Fxxx(int.Parse(TextValue.Substring(1)));
+                case Operator.Iif:
+                    return functions.Iif(Children.Select(e => e.GetValue()));
+                case Operator.Int:
+                    return functions.Int(Children.FirstOrDefault().GetValue());
+                case Operator.Left:
+                    return functions.Left(Children.Select(e => e.GetValue()));
+                case Operator.Len:
+                    return functions.Len(Children.FirstOrDefault().GetValue());
+                case Operator.Maths:
+                    return functions.Maths(Children.Select(e => e.GetValue()));
+                case Operator.Mid:
+                    return functions.Mid(Children.Select(e => e.GetValue()));
+                case Operator.Month:
+                    return functions.Month(Children.FirstOrDefault().GetValue());
+                case Operator.myCount:
+                    return functions.myCount(Children.Select(e => e.GetValue()));
+                case Operator.myFind:
+                    return functions.myFind(Children.Select(e => e.GetValue()));
+                case Operator.myHistory:
+                    return functions.myHistory(Children.Select(e => e.GetValue()));
+                case Operator.myLookup:
+                    return functions.myLookup(Children.Select(e => e.GetValue()));
+                case Operator.myMin:
+                    return functions.myMin(Children.Select(e => e.GetValue()));
+                case Operator.myMax:
+                    return functions.myMax(Children.Select(e => e.GetValue()));
+                case Operator.myMonth:
+                    return functions.myMonth(Children.Select(e => e.GetValue()));
+                case Operator.myParent:
+                    return functions.myParent(Children.Select(e => e.GetValue()));
+                case Operator.mySearch:
+                    return functions.mySearch(Children.Select(e => e.GetValue()));
+                case Operator.myYear:
+                    return functions.myYear(Children.Select(e => e.GetValue()));
+                case Operator.Now:
+                    return functions.Now(Children.Select(e => e.GetValue()));
+                case Operator.Number:
+                    return functions.Number(Children.Select(e => e.GetValue()));
+                case Operator.Replace:
+                    return functions.Replace(Children.Select(e => e.GetValue()));
+                case Operator.Right:
+                    return functions.Right(Children.Select(e => e.GetValue()));
+                case Operator.Round:
+                    return functions.Round(Children.Select(e => e.GetValue()));
+                case Operator.Row:
+                    return functions.Row();
+                case Operator.Sum:
+                    return functions.Sum(Children.Select(e => e.GetValue()));
+                case Operator.Trim:
+                    return functions.Trim(Children.Select(e => e.GetValue()));
+                case Operator.Ucase:
+                    return functions.Ucase(Children.FirstOrDefault().GetValue());
+                case Operator.xFind:
+                    return functions.xFind(Children.Select(e => e.GetValue()));
+                case Operator.Year:
+                    return functions.Year(Children.FirstOrDefault().GetValue());
+                case Operator.CDate:
+                    return functions.CDate(Children.FirstOrDefault().GetValue());
+                case Operator.CDbl:
+                    return functions.CDbl(Children.FirstOrDefault().GetValue());
+                case Operator.DateAdd:
+                    return functions.DateAdd(Children.Select(e => e.GetValue()));
+                case Operator.DateSerial:
+                    return functions.DateSerial(Children.Select(e => e.GetValue()));
+                case Operator.DLookup:
+                    return functions.DLookup(Children.Select(e => e.GetValue()));
+                case Operator.InStr:
+                    return functions.InStr(Children.Select(e => e.GetValue()));
+                case Operator.InStrRev:
+                    return functions.InStrRev(Children.Select(e => e.GetValue()));
+                case Operator.IsNull:
+                    return functions.IsNull(Children.Select(e => e.GetValue()));
+                case Operator.IsNumeric:
+                    return functions.IsNumeric(Children.Select(e => e.GetValue()));
+                case Operator.QuoteText:
+                    return TextValue[1..^1];
+                default:
+                    return "error!!!";
+            }
         }
     }
 }
