@@ -304,95 +304,96 @@ namespace ExpressionTreeReader
 
         public string GetValue()
         {
-            var functions = new Functions();
+            var rowFunctions = new RowFunctions();
+            var groupByFunctions = new GroupByFunctions();
             switch (Operator)
             {
                 case Operator.Concat:
-                    return functions.Concat(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Concat(Children.Select(e => e.GetValue()));
                 case Operator.Count:
-                    return functions.Count(Children.Select(e => e.GetValue()));
+                    return groupByFunctions.Count(Children.Select(e => e.GetValue()));
                 case Operator.Day:
-                    return functions.Day(Children.FirstOrDefault().GetValue());
+                    return StaticFunctions.Day(Children.FirstOrDefault().GetValue());
                 case Operator.Empty:
                     return "";
                 case Operator.Exact:
-                    return functions.Exact(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Exact(Children.Select(e => e.GetValue()));
                 case Operator.Fxxx:
-                    return functions.Fxxx(int.Parse(TextValue.Substring(1)));
+                    return rowFunctions.Fxxx(int.Parse(TextValue.Substring(1)));
                 case Operator.Iif:
-                    return functions.Iif(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Iif(Children.Select(e => e.GetValue()));
                 case Operator.Int:
-                    return functions.Int(Children.FirstOrDefault().GetValue());
+                    return StaticFunctions.Int(Children.FirstOrDefault().GetValue());
                 case Operator.Left:
-                    return functions.Left(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Left(Children.Select(e => e.GetValue()));
                 case Operator.Len:
-                    return functions.Len(Children.FirstOrDefault().GetValue());
+                    return StaticFunctions.Len(Children.FirstOrDefault().GetValue());
                 case Operator.Maths:
-                    return functions.Maths(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Maths(Children.Select(e => e.GetValue()));
                 case Operator.Mid:
-                    return functions.Mid(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Mid(Children.Select(e => e.GetValue()));
                 case Operator.Month:
-                    return functions.Month(Children.FirstOrDefault().GetValue());
+                    return StaticFunctions.Month(Children.FirstOrDefault().GetValue());
                 case Operator.myCount:
-                    return functions.myCount(Children.Select(e => e.GetValue()));
+                    return rowFunctions.myCount(Children.Select(e => e.GetValue()));
                 case Operator.myFind:
-                    return functions.myFind(Children.Select(e => e.GetValue()));
+                    return rowFunctions.myFind(Children.Select(e => e.GetValue()));
                 case Operator.myHistory:
-                    return functions.myHistory(Children.Select(e => e.GetValue()));
+                    return rowFunctions.myHistory(Children.Select(e => e.GetValue()));
                 case Operator.myLookup:
-                    return functions.myLookup(Children.Select(e => e.GetValue()));
+                    return rowFunctions.myLookup(Children.Select(e => e.GetValue()));
                 case Operator.myMin:
-                    return functions.myMin(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Min(Children.Select(e => e.GetValue()));
                 case Operator.myMax:
-                    return functions.myMax(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Max(Children.Select(e => e.GetValue()));
                 case Operator.myMonth:
-                    return functions.myMonth(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Month(Children.FirstOrDefault().GetValue());
                 case Operator.myParent:
-                    return functions.myParent(Children.Select(e => e.GetValue()));
+                    return rowFunctions.myParent(Children.Select(e => e.GetValue()));
                 case Operator.mySearch:
-                    return functions.mySearch(Children.Select(e => e.GetValue()));
+                    return rowFunctions.mySearch(Children.Select(e => e.GetValue()));
                 case Operator.myYear:
-                    return functions.myYear(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Year(Children.FirstOrDefault().GetValue());
                 case Operator.Now:
-                    return functions.Now(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Now(Children.FirstOrDefault().GetValue());
                 case Operator.Number:
-                    return functions.Number(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Number(Children.Select(e => e.GetValue()));
                 case Operator.Replace:
-                    return functions.Replace(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Replace(Children.Select(e => e.GetValue()));
                 case Operator.Right:
-                    return functions.Right(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Right(Children.Select(e => e.GetValue()));
                 case Operator.Round:
-                    return functions.Round(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Round(Children.Select(e => e.GetValue()));
                 case Operator.Row:
-                    return functions.Row();
+                    return rowFunctions.Row();
                 case Operator.Sum:
-                    return functions.Sum(Children.Select(e => e.GetValue()));
+                    return groupByFunctions.Sum(Children.Select(e => e.GetValue()));
                 case Operator.Trim:
-                    return functions.Trim(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.Trim(Children.FirstOrDefault().GetValue());
                 case Operator.Ucase:
-                    return functions.Ucase(Children.FirstOrDefault().GetValue());
+                    return StaticFunctions.Ucase(Children.FirstOrDefault().GetValue());
                 case Operator.xFind:
-                    return functions.xFind(Children.Select(e => e.GetValue()));
+                    return rowFunctions.myFind(Children.Select(e => e.GetValue()));
                 case Operator.Year:
-                    return functions.Year(Children.FirstOrDefault().GetValue());
+                    return StaticFunctions.Year(Children.FirstOrDefault().GetValue());
                 case Operator.CDate:
-                    return functions.CDate(Children.FirstOrDefault().GetValue());
+                    return StaticFunctions.CDate(Children.FirstOrDefault().GetValue());
                 case Operator.CDbl:
-                    return functions.CDbl(Children.FirstOrDefault().GetValue());
+                    return StaticFunctions.CDbl(Children.FirstOrDefault().GetValue());
                 case Operator.DateAdd:
-                    return functions.DateAdd(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.DateAdd(Children.Select(e => e.GetValue()));
                 case Operator.DateSerial:
-                    return functions.DateSerial(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.DateSerial(Children.Select(e => e.GetValue()));
                 case Operator.DLookup:
-                    return functions.DLookup(Children.Select(e => e.GetValue()));
+                    return rowFunctions.myLookup(Children.Select(e => e.GetValue()));
                 case Operator.InStr:
-                    return functions.InStr(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.InStr(Children.Select(e => e.GetValue()));
                 case Operator.InStrRev:
-                    return functions.InStrRev(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.InStrRev(Children.Select(e => e.GetValue()));
                 case Operator.IsNull:
-                    return functions.IsNull(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.IsNull(Children.Select(e => e.GetValue()));
                 case Operator.IsNumeric:
-                    return functions.IsNumeric(Children.Select(e => e.GetValue()));
+                    return StaticFunctions.IsNumeric(Children.Select(e => e.GetValue()));
                 case Operator.QuoteText:
                     return TextValue[1..^1];
                 default:
